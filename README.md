@@ -66,6 +66,3 @@ For testing purposes, you can use the following credentials:
 - Shared events (highlighted in pink) override the normal tag color in the display
 - Users cannot edit events shared with them
 - Calendar sharing is not synced; it shares the current state of the calendar
-"# Interactive-Calendar-Project" 
-"# Interactive-Calendar-Project" 
-"# Interactive-Calendar-Project" 
