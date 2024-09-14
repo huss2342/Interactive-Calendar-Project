@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Calendar App</title>
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="uiControl.js"></script>
+    <script src="calendar.js"></script>
+    <script src="auth.js"></script>
+    <script src="calendarEvents.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <h1>Calendar App:</h1>
+        <p id="login-status"></p>
+    </header>
+
+    <div class="button-container">
+        <a href="javascript:void(0);" class="logoutLink" id="logoutLink">Logout</a>
+        <div class="share-section">
+            <input type="text" id="sharedUserName" placeholder="Username to share with">
+            <a href="javascript:void(0);" class="share-button" id="shareCalendarLink">Share Entire Calendar</a>
+        </div>
+    </div>
+    
+    
+    <div id="form-container">
+        <!-- Login form -->
+        <div id="loginDiv">
+            <form id="loginForm">
+                <h3>Login</h3>
+                <label for="loginForm-username"></label>
+                <input type="text" id="loginForm-username" name="username" placeholder="Username" required />
+                <label for="loginForm-password"></label>
+                <input type="password" id="loginForm-password" name="password" placeholder="Password" required />
+                <input type="button" id="login_btn" value="Login" />
+            </form>
+        </div>
+
+        <!-- Registration form -->
+        <div id="registerDiv">
+            <form id="registerForm">
+                <h3>Register</h3>
+                <label for="registerForm-username"></label>
+                <input type="text" id="registerForm-username" name="username" placeholder="Username" required />
+                <label for="registerForm-password"></label>
+                <input type="password" id="registerForm-password" name="password" placeholder="Password" required />
+                <input type="button" id="register_btn" value="Register" />
+            </form>
+        </div>
+    </div>
+
+    <!-- Calendar -->
+    <div id="calendar-container">
+        <div id="calendar-header">
+            <button id="prevButton">&lt;</button>
+            <h2 id="monthYear">;</h2>
+            <button id="nextButton">&gt;</button>
+        </div>
+        <div id="calendar"></div>
+    </div>
+
+    <!-- The form to add an event  -->
+    <div class="add-edit-event-menu" id="event-form-container">
+        <h3>Add Event</h3>
+        <form id="eventForm">
+            <input id="eventId" name="eventId" type="hidden">
+            <label for="title">Title:</label>
+            <input id="title" name="title" type="text">
+            <label for="date">Date:</label>
+            <input id="date" name="date" type="date">
+            <label for="time">Time:</label>
+            <input id="time" name="time" type="time">
+            <label for="shared-users">Share with (usernames separated by spaces):</label>
+            <input id="shared-users" name="sharedUsers" type="text">
+            <div id="form-buttons">
+                <button id="saveButton" type="submit">Save</button>
+                <button id="cancelButton" type="button">Cancel</button>
+            </div>
+
+            <fieldset>
+                <label class="dropdown-button">Click to add a tag:</label>
+                <div>
+                    No Tag<input name="taginput" type="radio" id="default-tag" value="Default" checked>
+                    School<input name="taginput" type="radio" id="school-tag" value="School">
+                    Work<input name="taginput" type="radio" id="work-tag" value="Work">
+                    Family<input name="taginput" type="radio" id="family-tag" value="Family">
+                    Other<input name="taginput" type="radio" id="other-tag" value="Other">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- The form container is hidden by default using 'display: none' -->
+    <div class="add-edit-event-menu2" id="event-form-container2">
+        <h3>Edit/Delete Event</h3>
+        <form id="eventForm2">
+            <input id="eventId2" name="eventId2" type="hidden" /><br>
+            <input id="username2" name="username2" type="hidden" /><br>
+            <label for="title2">Title:</label>
+            <input id="title2" name="title2" type="text" />
+            <label for="date2">Date:</label>
+            <input id="date2" name="date2" type="date" />
+            <label for="time2">Time:</label>
+            <input id="time2" name="time2" type="time" /><br>
+            <label for="shared-users2">Share with (usernames separated by spaces):</label>
+            <input id="shared-users2" name="sharedUsers" type="text"><br>
+            <div id="form-buttons2">
+                <button id="editButton" type="submit">
+                    Edit Event (Save changes)
+                </button>
+                <button id="deleteButton" type="button">Delete Event</button>
+                <button id="cancelButton2" type="button">Cancel Operation</button>
+    
+                <fieldset>
+                    <label class="dropdown-button2">Click to add a tag:</label><br>
+                    <div>
+                        No tag<input name="taginput2" type="radio" id="default-tag2" value="Default" checked>
+                        School<input name="taginput2" type="radio" id="school-tag2" value="School">
+                        Work<input name="taginput2" type="radio" id="work-tag2" value="Work">
+                        Family<input name="taginput2" type="radio" id="family-tag2" value="Family">
+                        Other<input name="taginput2" type="radio" id="other-tag2" value="Other">
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+    
+
+
+</body>
+
+</html>

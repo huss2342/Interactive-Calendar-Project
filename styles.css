@@ -1,0 +1,304 @@
+body {
+    display: flex;
+   
+    background-color: #333;
+    color: #f3f3f3;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    display: inline; 
+    font-size: 22px; 
+    font-weight: bold; 
+    margin-right: 10px;
+}
+
+#login-status {
+    display: inline; 
+    color: #61ffb5;
+    font-style: italic; 
+}
+
+/* standard form settings */
+form {
+    margin: 5px;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+/* ----------------------------- LOGIN AND REGISTRATION FIELDS  ----------------------------- */
+
+/* Container holding both forms */
+#form-container {
+    display: flex;
+    
+    justify-content: space-around;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+/* Individual form divs */
+#loginDiv,
+#registerDiv {
+    flex-basis: 100%; 
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+    align-items: center; /* Align children to the start (left) */
+}
+
+#registerDiv h3,
+#loginDiv h3 {
+    margin-bottom: 10px; 
+    display: inline-block;
+}
+
+#registerForm-password,
+#registerForm-username,
+#loginForm-username,
+#loginForm-password {
+    width: 25%; 
+    margin-bottom: 15px;
+}
+
+
+/* ----------------------------- CALENDAR FIELDS  ----------------------------- */
+
+#calendar-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #222;
+    flex-grow: 1; /* new line */
+    display: flex; 
+    flex-direction: column; 
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+#calendar {
+    display: flex; 
+    flex-grow: 1; 
+    overflow: auto; 
+}
+
+#calendar table {
+    width: 100%;
+    border-collapse: collapse; 
+    table-layout: auto; 
+}
+
+/* day names were having issues in firefox */
+@-moz-document url-prefix() {
+    #calendar th {
+        line-height: 1px;
+    }
+}
+
+/* day names */
+#calendar th {
+   border: 3px solid rgb(255, 255, 255);
+   padding: 0px;
+   box-sizing: border-box;
+   text-align: center;
+   border-radius: 1px;
+   background-color: rgb(52, 66, 52);
+   color: #ffffff;
+   cursor: pointer;
+   position: relative; 
+   cursor: default;
+}
+
+/* day numbers */
+#calendar td {
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left; 
+    vertical-align: top; 
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    background-color: rgba(12, 17, 12, 0.496);
+    color: #ffffff;
+    cursor: pointer;
+    position: relative; 
+    width: 14%;
+    height: 20%;
+    overflow: auto;
+}
+/* day names */
+
+#calendar td:hover {
+    background-color: #72ffd55f;
+}
+
+/* ----------------------------- EVENT FORM FIELDS  ----------------------------- */
+
+/* Style for the overlay background */
+#event-form-container {
+    display: none; 
+    position: fixed;
+    overflow: auto;
+    width: 38vw;
+    height: auto;
+    left: 29vw;
+    top: 20%;
+    border-radius: 28px;
+    box-shadow: 0 0 10px 3px rgba(200, 200, 200, 0.6);
+    background: linear-gradient(to bottom, rgb(105, 209, 136), rgb(165, 236, 179));
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#event-form-container2{
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#eventForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style for the popup content */
+.add-edit-event-menu {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center;
+}
+
+
+#event-form-container2 {
+    display: none; 
+    position: fixed;
+    overflow: auto;
+    width: 38vw;
+    height: auto;
+    left: 29vw;
+    top: 28%;
+    border-radius: 28px;
+    box-shadow: 0 0 10px 3px rgba(200, 200, 200, 0.6);
+    background: linear-gradient(to bottom, rgb(105, 209, 136), rgb(165, 236, 179));
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.add-edit-event-menu2 {
+    background-color: black;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center;
+}
+
+
+
+
+#eventForm input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 98%;
+}
+
+#form-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#form-buttons button {
+    margin-left: 10px;
+}
+
+
+.custom-link {
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(13, 255, 0);
+    border: green  1px solid;
+    font-weight: bold;
+}
+
+.shared-event {
+    color: rgb(212, 70, 193);
+    border: rgb(212, 70, 193) 1px solid;
+} 
+
+
+
+/*css for the tags*/
+.school-event {
+    color: rgb(235, 58, 19);
+    border: rgb(218, 73, 12) 1px solid;
+} 
+.work-event {
+    color: rgb(85, 176, 232);
+    border: rgb(85, 176, 232) 1px solid;
+} 
+.family-event {
+    color: rgb(208, 215, 20);
+    border: rgb(207, 218, 58) 1px solid;
+} 
+.other-event {
+    color: rgb(207, 107, 7);
+    border: rgb(204, 128, 6) 1px solid;
+} 
+
+
+
+
+
+/* logout button and area */
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.share-section {
+    display: flex;  
+}
+
+#logoutLink {
+    display: none;
+    color: red;
+    margin-right: 10px; /* spacing between buttons */
+    padding: 5px 10px; /* optional padding for better appearance */
+    text-decoration: none;
+    background-color: #eee; /* optional background color */
+    border: 1px solid #ccc; /* optional border */
+    
+}
+
+#logoutLink a {
+    text-decoration: none;
+    font-weight: bold;
+    color: lightseagreen;
+}
+.share-button {
+    margin-left: 10px;  
+    padding: 5px 10px; 
+    text-decoration: none;
+    background-color: #eee;
+    border: 1px solid #ccc; 
+    color: rgb(125, 0, 117);
+}
+
+#sharedUserName {
+    display: inline-block;  
+}
+
+
